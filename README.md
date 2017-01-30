@@ -1,7 +1,7 @@
 # coursebuilder-register-handler-unicode
 To allow unicode characters to be displayed as they should when parsed by the registration handler
 
-Line #1193 in this code has a change to the original
+Line #1193 in controllers/utils.py has a change to the original code
 
 Original:
 name, transforms.dumps(self.request.POST.items()), self,
