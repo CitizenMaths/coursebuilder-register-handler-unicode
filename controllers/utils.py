@@ -1,4 +1,4 @@
-# Copyright 2012 Google Inc. All Rights Reserved.
+﻿# Copyright 2012 Google Inc. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -1187,8 +1187,8 @@ class RegisterHandler(BaseHandler):
         else:
             name = self.request.get('form01')
 
-        #Added decode method to second line here to allow unicode characters to be displayed as is in the additional_fields field in the Student datastore, otherwise it stores it, for example, like this: \u00f6 instead if ö
-		#Original line was: name, transforms.dumps(self.request.POST.items()), self,
+        #Added decode method to second line here to allow unicode characters to be displayed as is in the additional_fields field in the Student datastore, otherwise it stores it, for example, like this: \u00f6 instead of ö
+        #Original line was: name, transforms.dumps(self.request.POST.items()), self,
         Student.add_new_student_for_current_user(
             name, transforms.dumps(self.request.POST.items()).decode('unicode_escape'), self,
             labels=self.request.get('labels'))
